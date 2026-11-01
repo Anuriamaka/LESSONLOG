@@ -1,16 +1,29 @@
-# React + Vite
+# LessonLog
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+LessonLog is a tutor and student management web app for independent tutors and coaches who teach several students across different subjects. It brings students, lesson times, homework, progress notes and payments into one place, replacing scattered notebooks, chat threads and calendar apps.
 
-Currently, two official plugins are available:
+A tutor can see at a glance who is coming up next, what homework is outstanding, and which sessions are still unpaid.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Authentication: sign up, sign in, sign out, password recovery and persistent sessions
+- Dashboard: today's and this week's lessons, outstanding homework, unpaid sessions and active students
+- Student records: create, view, edit, search and archive students, with guardian contact details
+- Lessons: schedule lessons with subject, date, duration and rate, and mark them completed, cancelled or missed
+- Homework: assign tasks per lesson with due dates and status, in list and board views
+- Payments: record payments against lessons and see each student's outstanding balance
+- Student detail page with lesson history, progress notes and balance
+- Responsive layouts, validation, loading and empty states, and useful error messages
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech stack
 
-## Expanding the ESLint configuration
+- Frontend: React, Vite, Tailwind CSS, React Router, TanStack Query, React Hook Form, Zod
+- Backend: Supabase (Postgres, Auth, Row Level Security)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Security
+
+Each tutor can only access their own records. Row Level Security policies enforce ownership on every table, and outstanding balances are calculated from lessons and payments, never stored as an editable number.
+
+## Status
+
+Month 1 MVP, in development.
